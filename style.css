@@ -647,6 +647,25 @@ body {
 
 
 /* =========================
+   MAIN CHICK FINAL LINE
+========================= */
+
+.main-chick-ending {
+    margin-top: 25px;
+
+    font-size: clamp(18px, 3vw, 28px);
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    color: #743f5d;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
    MOBILE
 ========================= */
 
