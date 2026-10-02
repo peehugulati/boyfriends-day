@@ -1,0 +1,720 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #4b3543;
+
+    background:
+        radial-gradient(circle at 10% 20%, #ffe1ed 0%, transparent 25%),
+        radial-gradient(circle at 90% 10%, #e8ddff 0%, transparent 25%),
+        linear-gradient(135deg, #fff5f8, #f7efff);
+
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND DECORATIONS
+========================= */
+
+.background-decoration {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+.background-decoration span {
+    position: absolute;
+
+    font-size: 25px;
+    opacity: 0.35;
+
+    animation: floatAround 8s ease-in-out infinite;
+}
+
+.background-decoration span:nth-child(1) {
+    top: 8%;
+    left: 8%;
+}
+
+.background-decoration span:nth-child(2) {
+    top: 20%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.background-decoration span:nth-child(3) {
+    top: 65%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.background-decoration span:nth-child(4) {
+    bottom: 10%;
+    right: 8%;
+    animation-delay: 3s;
+}
+
+.background-decoration span:nth-child(5) {
+    top: 45%;
+    left: 12%;
+    animation-delay: 4s;
+}
+
+.background-decoration span:nth-child(6) {
+    bottom: 25%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.background-decoration span:nth-child(7) {
+    top: 35%;
+    right: 5%;
+    animation-delay: 5s;
+}
+
+@keyframes floatAround {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(8deg);
+    }
+}
+
+
+/* =========================
+   SCREEN
+========================= */
+
+.screen {
+    position: relative;
+    z-index: 1;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SCREEN 1
+========================= */
+
+.choice-section {
+    width: min(1100px, 94%);
+    margin: auto;
+
+    padding: 70px 0;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.small-title {
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+    color: #c76b91;
+
+    margin-bottom: 12px;
+}
+
+.intro h1,
+.hero-text h1 {
+    font-size: clamp(30px, 5vw, 58px);
+    line-height: 1.15;
+
+    color: #743f5d;
+
+    text-shadow: 2px 2px 0 #ffffff;
+}
+
+.subtitle {
+    margin-top: 14px;
+
+    font-size: 18px;
+    color: #806170;
+}
+
+
+/* =========================
+   CHOICE CARDS
+========================= */
+
+.choice-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    max-width: 900px;
+    margin: auto;
+}
+
+.choice-card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 30px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 18px 45px rgba(75, 53, 67, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.choice-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+
+    box-shadow:
+        0 25px 55px rgba(75, 53, 67, 0.18);
+}
+
+
+/* Badge */
+
+.player-badge {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50px;
+
+    background: #ffe0ec;
+
+    color: #8c4566;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* Images */
+
+.choice-image {
+    width: 100%;
+    height: 260px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 25px rgba(75, 53, 67, 0.12);
+}
+
+.choice-card h2 {
+    font-size: 28px;
+
+    color: #713f5c;
+
+    margin-bottom: 12px;
+}
+
+
+/* Me description */
+
+.choice-description {
+    font-size: 16px;
+
+    color: #806170;
+
+    margin-bottom: 8px;
+}
+
+.funny-line {
+    font-size: 15px;
+
+    color: #9a627d;
+
+    font-style: italic;
+
+    margin-bottom: 18px;
+}
+
+
+/* Buttons */
+
+.choice-button {
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 50px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.choice-button:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 8px 20px rgba(75, 53, 67, 0.15);
+}
+
+.gaming-button {
+    background: #e5dcff;
+    color: #624f89;
+}
+
+.me-button {
+    background: #ffd7e6;
+    color: #8c4566;
+}
+
+
+/* =========================
+   CHOICE MESSAGE
+========================= */
+
+.choice-message {
+    text-align: center;
+
+    min-height: 100px;
+
+    margin-top: 35px;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.choice-message.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.message-main {
+    font-size: clamp(25px, 5vw, 42px);
+
+    font-weight: bold;
+
+    color: #8b4165;
+}
+
+.message-sub {
+    margin-top: 10px;
+
+    font-size: 18px;
+
+    color: #806170;
+}
+
+
+/* =========================
+   SCREEN TRANSITIONS
+========================= */
+
+.fade-out {
+    animation: fadeOut 0.65s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   SCREEN 2
+========================= */
+
+.second-screen {
+    display: none;
+}
+
+.love-section {
+    padding: 70px 0 90px;
+}
+
+.hero-text {
+    width: min(1000px, 94%);
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: clamp(28px, 5vw, 55px);
+}
+
+
+/* =========================
+   NATURAL SCRAPBOOK GALLERY
+========================= */
+
+.gallery {
+    width: min(1050px, 94%);
+
+    margin: 45px auto 65px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 22px;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 18px 45px rgba(75, 53, 67, 0.10);
+}
+
+
+/* Individual photo */
+
+.photo {
+    background: white;
+
+    padding: 9px;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 10px 25px rgba(75, 53, 67, 0.16);
+
+    position: relative;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.04);
+
+    box-shadow:
+        0 18px 35px rgba(75, 53, 67, 0.22);
+
+    z-index: 5;
+}
+
+.photo img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 320px;
+
+    object-fit: contain;
+
+    background: #fffafc;
+
+    border-radius: 2px;
+}
+
+
+/* Natural scrapbook rotations */
+
+.photo-one {
+    width: 270px;
+    transform: rotate(-3deg);
+}
+
+.photo-two {
+    width: 220px;
+    transform: rotate(2deg);
+}
+
+.photo-three {
+    width: 250px;
+    transform: rotate(-1deg);
+}
+
+.photo-four {
+    width: 210px;
+    transform: rotate(3deg);
+}
+
+.photo-five {
+    width: 270px;
+    transform: rotate(-2deg);
+}
+
+.photo-six {
+    width: 225px;
+    transform: rotate(2deg);
+}
+
+.photo-seven {
+    width: 280px;
+    transform: rotate(-2deg);
+}
+
+.photo-eight {
+    width: 230px;
+    transform: rotate(3deg);
+}
+
+.photo-nine {
+    width: 260px;
+    transform: rotate(-2deg);
+}
+
+.photo-ten {
+    width: 220px;
+    transform: rotate(1deg);
+}
+
+
+/* =========================
+   LOVE QUOTE
+========================= */
+
+.love-message {
+    width: min(850px, 90%);
+
+    margin: auto;
+
+    padding: 35px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 35px rgba(75, 53, 67, 0.10);
+}
+
+.love-message p {
+    font-size: clamp(18px, 3vw, 26px);
+
+    line-height: 1.5;
+
+    color: #70465d;
+
+    font-style: italic;
+}
+
+.heart-decoration {
+    font-size: 28px;
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.ending {
+    width: min(850px, 90%);
+
+    margin: 50px auto 0;
+
+    text-align: center;
+}
+
+.ending-card {
+    padding: 45px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 225, 237, 0.85),
+            rgba(238, 227, 255, 0.85)
+        );
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 20px 50px rgba(75, 53, 67, 0.13);
+}
+
+.ending-hearts {
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+.ending-card h2 {
+    font-size: clamp(28px, 5vw, 48px);
+
+    color: #803f60;
+
+    margin-bottom: 18px;
+}
+
+.ending-card p {
+    font-size: 18px;
+
+    color: #76566a;
+
+    line-height: 1.6;
+}
+
+.final-line {
+    margin-top: 22px;
+
+    font-weight: bold;
+
+    color: #8a4d6a !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .choice-section {
+        padding: 50px 0;
+    }
+
+    .choice-container {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .choice-card {
+        padding: 20px;
+    }
+
+    .choice-image {
+        height: 230px;
+    }
+
+    .gallery {
+        width: 94%;
+
+        gap: 14px;
+
+        padding: 15px;
+    }
+
+    .photo {
+        width: 44% !important;
+    }
+
+    .photo img {
+        height: auto;
+
+        max-height: none;
+
+        object-fit: contain;
+    }
+
+    .love-message {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .ending-card {
+        padding: 35px 18px;
+    }
+}
+
+
+/* Extra small phones */
+
+@media (max-width: 400px) {
+
+    .choice-image {
+        height: 210px;
+    }
+
+    .gallery {
+        gap: 10px;
+    }
+
+    .photo {
+        width: 46% !important;
+    }
+}
